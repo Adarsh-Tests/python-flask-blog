@@ -1,0 +1,24 @@
+{
+  "params":
+  {
+    "local_server":"True",
+    "local_uri": "mysql://root:@localhost/theworldblogs",
+    "prod_uri":"mysql://root:@localhost/theworldblogs",
+    "fb_url":"https://facebook.com/theworldblogs",
+    "tw_url":"https://twitter.com/theworldblogs",
+    "gh_url": "https://github.com/theworldblogs",
+    "blog_name": "TheWorldBlogs",
+    "tag_line": "Blogs from around the world!",
+    "gmail-user":"bruha213@gmail.com",
+    "gmail-password":"mtjbkzrzifvdrmvu",
+    "user-name": "Admin",
+    "about_text": "Hello , my name is adarsh , this is my first flask project.\n I post my blogs here on  various topics around the world.",
+    "no_of_posts": 5,
+    "admin_user":"adarsh",
+    "admin_pass": "21072003",
+    "login_image":"login_img.png",
+    "Admin_name": "Admin Panel",
+    "Admin_line": "Edit your posts here",
+    "upload_location": "C:\\Users\\pandy\\PycharmProjects\\flask"
+  }
+}

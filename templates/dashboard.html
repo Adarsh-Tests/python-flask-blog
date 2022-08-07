@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block body %}
+   <!-- Page Header-->
+   <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/admin-bg.jpg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>{{params['Admin_name']}}</h1>
+                    <span class="subheading">{{params['Admin_line']}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <h1>action</h1>
+                <button class="btn btn-outline-dark btn-floating m-1"><a = href="/edit/0">Add a new post</a></button>
+                <button class="btn btn-outline-dark btn-floating m-1"><a = href="/dashboard">Logout</a></button>
+            <hr>    
+              <h1>Upload a file here</h1>
+                <form action="/uploader" method="post">
+                  <input type="file" name="file1" class="btn btn-outline-dark btn-floating m-1>
+                  <button class="btn btn-outline-dark btn-floating m-1"><a = href="/edit/0">Submit</a></button>
+                </form>
+          
+            <hr>  
+            <table class="table table-hover table-white">
+                <thead>
+                  <tr>
+                    <th scope="col"  >sno</th>
+                    <th scope="col">title</th>
+                    <th scope="col">Date</th>                  
+                    <th scope="col" align-text="center" >Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for post in posts %}
+                  <tr>
+                    <th scope="row">{{ post.sno }}</th>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.date }}</td>
+                    <td><a href="/edit/{{post.sno}}"<button type="button" class="btn btn-light">Edit</button></td>
+                    <td><button type="button" class="btn btn-light"><a href="/delete/{{post.sno}}">Delete</a></button></td>
+                  </tr>
+              {% endfor %}
+                  
+                </tbody>
+              </table>
+         
+            <!-- Pager-->
+            <div class="d-flex justify-content-end mb-4"><a class="btn btn-outline-dark btn-floating m-1" href="#!">Older Posts →</a></div>
+        </div>
+    </div>
+</div>
+    {% endblock %}
